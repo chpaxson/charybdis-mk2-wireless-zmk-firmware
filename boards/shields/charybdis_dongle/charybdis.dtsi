@@ -5,7 +5,6 @@
     chosen {
         zmk,kscan = &kscan0;
         zmk,physical-layout = &charybdis_physical_layout;
-        zmk,underglow = &led_strip;
     };
 
     /* battery monitor*/

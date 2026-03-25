@@ -1,5 +1,15 @@
 #include "charybdis.dtsi"
 
+/ {
+    chosen {
+        zmk,underglow = &led_strip;
+    };
+};
+
+&led_strip {
+    chain-length = <29>;
+};
+
 &kscan0 {
 	compatible = "zmk,kscan-gpio-matrix";
 	

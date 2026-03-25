@@ -37,3 +37,13 @@
     status = "okay";
     device = <&trackball>;
 };
+
+/ {
+    chosen {
+        zmk,underglow = &led_strip;
+    };
+};
+
+&led_strip {
+    chain-length = <27>;
+};

@@ -2,6 +2,16 @@
 #include "charybdis_pmw3610.dtsi"
 #include "charybdis_pointer.dtsi"
 
+/ {
+    chosen {
+        zmk,underglow = &led_strip;
+    };
+};
+
+&led_strip {
+    chain-length = <27>;
+};
+
 // The matrix transform is 6 columns over because the left half is 6 columns wide.
 &default_transform {
 	col-offset = <6>;
