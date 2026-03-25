@@ -134,8 +134,8 @@ layers:
   - {t: ▽, type: trans}
   - BT NXT
   - BACK
-  - Ctl+Gui+ LEFT
-  - Ctl+Gui+ RIGHT
+  - BACK
+  - FORWARD
   - FORWARD
   - NEXT
   - VOLUME UP
