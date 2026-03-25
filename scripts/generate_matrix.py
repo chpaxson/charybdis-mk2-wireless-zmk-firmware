@@ -16,7 +16,7 @@ format_shields = {
 
 groups = []
 for keymap in keymaps:
-    for fmt in ["bt", "dongle"]:
+    for fmt in ["dongle",]:
         groups.append({
             "keymap": keymap,
             "format": fmt,
