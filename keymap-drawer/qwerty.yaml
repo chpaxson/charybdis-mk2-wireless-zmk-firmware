@@ -1,7 +1,19 @@
 layout: {zmk_keyboard: qwerty}
 layers:
   Base:
-  - SEARCH
+  - {t: ESC, h: Sym}
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - '-'
+  - TAB
   - Q
   - W
   - E
@@ -12,163 +24,223 @@ layers:
   - I
   - O
   - P
-  - L_BASE L_GAME
-  - TAB
-  - {t: A, h: LCMD}
-  - {t: S, h: LALT}
-  - {t: D, h: LSHFT}
-  - {t: F, h: LCTRL}
+  - \
+  - LSHFT
+  - {t: A, h: LGUI}
+  - {t: S, h: LCTRL}
+  - {t: D, h: LALT}
+  - {t: F, h: LSHFT}
   - G
-  - H
-  - {t: J, h: RCTRL}
-  - {t: K, h: RSHFT}
-  - {t: L, h: LALT}
-  - {t: ;, h: RCMD}
-  - DEL
-  - CLIP HIST
-  - Z
+  - {t: H, h: ^}
+  - {t: J, h: '&'}
+  - {t: K, h: '*'}
+  - {t: L, h: (}
+  - {t: ;, h: )}
+  - ''''
+  - LCTRL
+  - {t: Z, h: Sym}
   - X
   - C
   - V
   - B
   - N
   - M
-  - {t: ',', s: ;}
-  - {t: ., s: ':'}
-  - {t: '?', s: '!'}
-  - /
-  - ESC SCRL SLOW
-  - SYM LCLK
-  - BS NUM
-  - ENTER
-  - SPACE NAV
-  Num:
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - +
-  - {t: '7', s: F7}
-  - {t: '8', s: F8}
-  - {t: '9', s: F9}
-  - {t: '%', s: F10}
-  - ''
-  - {t: ▽, type: trans}
-  - ''
-  - ''
-  - ''
+  - ','
+  - .
+  - {t: /, h: Sym}
+  - RALT
+  - {t: LEFT, h: Num}
   - BACK SPACE
-  - LSHIFT
-  - '-'
-  - {t: '4', s: F4}
-  - {t: '5', s: F5}
-  - {t: '6', s: F6}
-  - {t: '*', s: F11}
-  - ''
-  - ''
-  - ''
-  - X
-  - ''
-  - ''
-  - ''
-  - '='
-  - {t: '1', s: F1}
-  - {t: '2', s: F2}
-  - {t: '3', s: F3}
-  - {t: ., s: F12}
-  - /
-  - ''
-  - ''
-  - {t: ▽, type: trans}
-  - '0'
+  - LGUI
   - SPACE
-  Nav:
-  - ''
-  - WHEEL L
-  - WHEEL D
-  - ''
-  - WHEEL U
-  - WHEEL R
-  - TMUX DETCH
-  - TMUX ATTCH
-  - TMUX NEXT
-  - TMUX SESH
-  - TMUX SYNC
-  - ''
+  - LEFT ALT
+  - {t: RIGHT, h: Nav}
+  - ENTER
+  - DEL
+  Num:
+  - '~'
+  - '!'
+  - '@'
+  - '#'
+  - $
+  - '%'
+  - ^
+  - '&'
+  - '*'
+  - (
+  - )
+  - _
   - TAB
-  - BACK
-  - LALT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - (
+  - )
+  - {t: ▽, type: trans}
+  - '['
+  - KP 7
+  - KP 8
+  - KP 9
+  - ']'
+  - \
   - LSHFT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '{'
+  - '}'
+  - $
+  - KP PLUS
+  - KP 4
+  - KP 5
+  - KP 6
+  - {t: ;, h: RGUI}
+  - ''''
   - LCTRL
-  - FWD
-  - HSPLIT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - BACK
+  - FORWARD
+  - REFRESH
+  - KP MULTIPLY
+  - KP 1
+  - KP 2
+  - KP 3
+  - {t: /, h: Game}
+  - RALT
+  - {t: Num, h: sticky, type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - KP 0
+  - KP DOT
+  Nav:
+  - F12
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - F11
+  - TAB
+  - RGB HUI
+  - RGB BRI
+  - RGB SAI
+  - {t: ▽, type: trans}
+  - BT NXT
+  - BACK
+  - Ctl+Gui+ LEFT
+  - Ctl+Gui+ RIGHT
+  - FORWARD
+  - NEXT
+  - VOLUME UP
+  - LSHFT
+  - RGB EFR
+  - RGB TOG
+  - RGB EFF
+  - {t: ▽, type: trans}
+  - {t: Slow, h: toggle}
   - LEFT
   - DOWN
-  - UP
+  - UP ARROW
   - RIGHT
-  - ''
-  - ''
-  - MOVE L
-  - MOVE D
-  - MOVE UP
-  - MOVE R
-  - ''
-  - VSPLIT
+  - PLAY PAUSE
+  - MUTE
+  - LCTRL
+  - RGB HUD
+  - RGB BRD
+  - RGB SAD
+  - '&soft_off'
+  - BT PRV
   - HOME
   - PG DN
   - PG UP
   - END
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - PREVIOUS
+  - VOLUME DOWN
+  - {t: Nav, h: sticky}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   Sym:
-  - ''
-  - '~'
+  - {t: '~', type: held}
+  - '!'
+  - '@'
+  - '#'
   - $
-  - ^
-  - '&move_line_up'
-  - '&mc_add_above'
-  - '&'
-  - +
-  - '['
-  - ']'
   - '%'
-  - \
-  - ''
-  - _
-  - <
-  - '>'
-  - BACK SPACE
-  - '&delete_line'
-  - '`'
-  - '-'
+  - ^
+  - '&'
+  - '*'
   - (
   - )
-  - '*'
-  - '|'
-  - ''
-  - ~/
-  - ''
-  - '#'
-  - '&move_line_down'
-  - '&mc_add_below'
-  - '```'
-  - '='
+  - _
+  - TAB
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - (
+  - )
+  - {t: ▽, type: trans}
+  - '['
+  - KP 7
+  - KP 8
+  - KP 9
+  - ']'
+  - \
+  - LSHFT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - '{'
   - '}'
-  - '@'
-  - /
-  - ''
+  - $
+  - KP PLUS
+  - KP 4
+  - KP 5
+  - KP 6
+  - {t: ;, h: RGUI}
+  - ''''
+  - LCTRL
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - BACK
+  - FORWARD
+  - REFRESH
+  - KP MULTIPLY
+  - KP 1
+  - KP 2
+  - KP 3
+  - {t: /, h: Game}
+  - RALT
+  - {t: Num, h: sticky}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - KP 0
+  - KP DOT
   Game:
+  - {t: ESC, h: Sym}
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
   - '1'
   - TAB
   - Q
@@ -203,18 +275,21 @@ layers:
   - ''
   - ''
   - ''
+  - {type: held}
   - ''
-  - ''
-  - ''
+  - {type: held}
   - SPACE
   - LEFT ALT
   - ''
   - ''
+  - ''
+  - ''
+  - ''
   Xtra:
-  - ZMK Studio
-  - SHRUG
-  - LGTM
-  - GIT COMMIT
+  - ''
+  - ''
+  - ''
+  - ''
   - ''
   - BRIGHT ▲
   - {t: BT, h: '0'}
@@ -224,7 +299,7 @@ layers:
   - OUT TOG
   - BT CLR
   - SLEEP
-  - sudo!!
+  - ''
   - ''
   - ''
   - ''
@@ -241,11 +316,26 @@ layers:
   - COPY
   - PASTE
   - ''
-  - NEW DIR
+  - ''
   - MUTE
   - VOLUME DOWN
   - VOLUME UP
   - PRINT SCREEN
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
+  - ''
   - ''
   - ''
   - ''
@@ -294,7 +384,37 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   Scroll:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
