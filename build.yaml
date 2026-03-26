@@ -17,14 +17,8 @@ keymap:
   - qwerty
 
 include:
-  - board: nice_nano@1//zmk
+  - board: nice_nano
     shield: charybdis_dongle
     keymap: qwerty
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-  - board: nice_nano//zmk
-    shield: charybdis_left
-    keymap: qwerty
-  - board: nice_nano//zmk
-    shield: charybdis_right
-    keymap: qwerty
