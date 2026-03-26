@@ -17,11 +17,7 @@ keymap:
   - qwerty
 
 include:
-<<<<<<< Updated upstream
-  - board: esp32c3_devkitm
-=======
   - board: nice_nano@1//zmk
->>>>>>> Stashed changes
     shield: charybdis_dongle
     keymap: qwerty
     snippet: studio-rpc-usb-uart
