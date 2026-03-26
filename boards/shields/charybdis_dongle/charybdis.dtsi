@@ -5,7 +5,12 @@
     chosen {
         zmk,kscan = &kscan0;
         zmk,physical-layout = &charybdis_physical_layout;
-        // No zmk,battery: the ESP32-C3 dongle is USB-powered.
+        zmk,battery = &vbatt;
+    };
+
+    /* battery monitor*/
+    vbatt: vbatt {
+	compatible = "zmk,battery-nrf-vddh";
     };
 
     default_transform: keymap_transform_0 {

@@ -1,29 +1,8 @@
 // Documentation: https://zmk.dev/docs/development/hardware-integration/dongle
 #include <dt-bindings/zmk/matrix_transform.h>
-#include <zephyr/dt-bindings/input/input-event-codes.h>
 #include "charybdis-layouts.dtsi"
+#include "charybdis_pmw3610.dtsi"
 #include "charybdis_pointer.dtsi"
-
-// The dongle is the central — it does not physically host the trackball.
-// Only the split-input virtual device and listener are needed here.
-// (The actual SPI sensor lives on the right peripheral via charybdis_pmw3610.dtsi.)
-/ {
-    split_inputs {
-        #address-cells = <1>;
-        #size-cells = <0>;
-
-        trackball_split: trackball_split@0 {
-            compatible = "zmk,input-split";
-            reg = <0>;
-        };
-    };
-
-    trackball_listener: trackball_listener {
-        compatible = "zmk,input-listener";
-        status = "disabled"; // enabled below
-        device = <&trackball_split>;
-    };
-};
 
 &charybdis_physical_layout {
     transform = <&default_transform>;

@@ -128,9 +128,9 @@ layers:
   - F10
   - F11
   - TAB
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - RGB HUI
+  - RGB BRI
+  - RGB SAI
   - {t: ▽, type: trans}
   - BT NXT
   - BACK
@@ -140,9 +140,9 @@ layers:
   - NEXT
   - VOLUME UP
   - LSHFT
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - RGB EFR
+  - RGB TOG
+  - RGB EFF
   - {t: ▽, type: trans}
   - {t: Slow, h: toggle}
   - LEFT
@@ -152,9 +152,9 @@ layers:
   - PLAY PAUSE
   - MUTE
   - LCTRL
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - RGB HUD
+  - RGB BRD
+  - RGB SAD
   - '&soft_off'
   - BT PRV
   - HOME
