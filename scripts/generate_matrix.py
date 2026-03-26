@@ -2,34 +2,37 @@ import json
 from pathlib import Path
 
 # === CONFIGURATION ===
-board = "nice_nano"
+PERIPHERAL_BOARD = "nice_nano"      # left + right halves
+DONGLE_BOARD     = "esp32c3_devkitm" # USB dongle (central)
+
 # automatically find all *.keymap filenames under ../config/keymap
 keymap_dir = Path(__file__).parent.parent / "config" / "keymap"
 keymaps = sorted(p.stem for p in keymap_dir.glob("*.keymap"))
 
-# Map each format to the shields it should build
-format_shields = {
-    "bt": ["charybdis_left", "charybdis_right"],
-    "dongle": ["charybdis_left", "charybdis_right", "charybdis_dongle"],
-    "reset": ["settings_reset"],
-}
-
 groups = []
 for keymap in keymaps:
-    for fmt in ["dongle",]:
-        groups.append({
-            "keymap": keymap,
-            "format": fmt,
-            "name": f"{keymap}-{fmt}",
-            "board": board,
-        })
+    # Dongle build: left + right peripherals on nice_nano,
+    # dongle central on esp32c3_devkitm — emitted as two matrix entries
+    # that share the same output directory name via the name field.
+    groups.append({
+        "keymap": keymap,
+        "format": "dongle-peripheral",
+        "name": f"{keymap}-dongle",
+        "board": PERIPHERAL_BOARD,
+    })
+    groups.append({
+        "keymap": keymap,
+        "format": "dongle-central",
+        "name": f"{keymap}-dongle",
+        "board": DONGLE_BOARD,
+    })
 
-# single reset entry
+# single reset entry (nice_nano)
 groups.append({
     "keymap": "default",
     "format": "reset",
     "name": "reset-nanov2",
-    "board": board,
+    "board": PERIPHERAL_BOARD,
 })
 
 # Dump matrix as compact JSON (GitHub expects it this way)

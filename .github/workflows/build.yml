@@ -115,7 +115,13 @@ jobs:
       run: |
         ZMK_SHIELDS_DIR="$GITHUB_WORKSPACE/zmk/app/boards/shields"
         mkdir -p "$ZMK_SHIELDS_DIR"
-        cp -r "boards/shields/charybdis_${{ matrix.combo.format }}" "$ZMK_SHIELDS_DIR/"
+        # dongle-peripheral and dongle-central both use the same shield source dirs
+        FM="${{ matrix.combo.format }}"
+        case "$FM" in
+          dongle-peripheral|dongle-central) SHIELD_DIR="dongle" ;;
+          *) SHIELD_DIR="$FM" ;;
+        esac
+        cp -r "boards/shields/charybdis_${SHIELD_DIR}" "$ZMK_SHIELDS_DIR/"
         for d in "$ZMK_SHIELDS_DIR"/*; do
           for f in charybdis-layouts.dtsi charybdis_pmw3610.dtsi charybdis_pointer.dtsi; do
             [ -f "config/$f" ] && cp "config/$f" "$d/" || true
@@ -148,8 +154,8 @@ jobs:
         for SH in ${LIST[$FM]}; do
           BUILD_DIR=$(mktemp -d)
 
-          # studio RPC only on right half of BT builds
-          if [[ "$FM" == "bt" && "$SH" == *right ]]; then
+          # studio RPC: BT right half + ESP32-C3 dongle central
+          if [[ "$FM" == "bt" && "$SH" == *right ]] || [[ "$FM" == "dongle-central" ]]; then
             SNIPPET_OPTION="-DSNIPPET=studio-rpc-usb-uart"
           else
             SNIPPET_OPTION=""
