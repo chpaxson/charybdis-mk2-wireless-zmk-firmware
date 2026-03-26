@@ -20,5 +20,5 @@ include:
   - board: nice_nano
     shield: charybdis_dongle
     keymap: qwerty
-    snippet: studio-rpc-usb-uart
+    snippet: studio-rpc-usb-uart zmk-usb-logging
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
