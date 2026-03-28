@@ -11,6 +11,7 @@ shield:
 
 format:
   - dongle
+  - bt
   - reset
 
 keymap:
@@ -22,3 +23,10 @@ include:
     keymap: qwerty
     snippet: studio-rpc-usb-uart zmk-usb-logging
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+  - board: nice_nano
+    shield: charybdis_right
+    keymap: qwerty
+    snippet: zmk-usb-logging
+  - board: nice_nano
+    shield: charybdis_left
+    keymap: qwerty

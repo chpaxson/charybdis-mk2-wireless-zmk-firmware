@@ -1,14 +1,11 @@
 #include "charybdis.dtsi"
 #include "charybdis_pmw3610.dtsi"
 #include "charybdis_pointer.dtsi"
+#include <dt-bindings/led/led.h>
 
 // The matrix transform is 6 columns over because the left half is 6 columns wide.
 &default_transform {
 	col-offset = <6>;
-};
-
-&five_column_transform {
-	col-offset = <5>;
 };
 
 // KSCAN matrix
@@ -25,20 +22,23 @@
 		;
 
 	row-gpios
-		= <&pro_micro 18 GPIO_ACTIVE_HIGH>
+		= <&pro_micro 21 GPIO_ACTIVE_HIGH>
+		, <&pro_micro 18 GPIO_ACTIVE_HIGH>
 		, <&pro_micro 5 GPIO_ACTIVE_HIGH>
 		, <&pro_micro 4 GPIO_ACTIVE_HIGH>
 		, <&pro_micro 9 GPIO_ACTIVE_HIGH>
 		;
 };
 
-/* enable the listener on central */
-&trackball_listener {
-    status = "okay";
-    device = <&trackball>;
+&trackball {
+	status = "okay";
 };
 
-#include <dt-bindings/led/led.h>
+/* Enable the trackball on the peripheral, split to dongle/central */
+&trackball_split {
+	device = <&trackball>;
+	status = "okay";
+};
 
 &pinctrl {
     spi3_default: spi3_default {
