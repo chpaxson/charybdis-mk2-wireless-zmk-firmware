@@ -2,7 +2,7 @@
 
 ## Intro
 
-This repository offers pre-configured ZMK firmware. It's designed for the [Wireless Charybdis keyboards](https://github.com/280Zo/charybdis-wireless-mini-3x6-build-guide?tab=readme-ov-file), but is easily adaptable to other platforms. It supports the latest stable ZMK release (v0.4.1) with full Bluetooth/USB split and dongle build support (including Prospector dongles with displays), and uses the latest input listeners and processors for responsive pointer and scroll behavior.
+This repository offers pre-configured ZMK firmware. It's designed for the [Wireless Charybdis 4x6 keyboards](https://github.com/Bastardkb/Charybdis), but is easily adaptable to other platforms. It supports the latest stable ZMK release (v0.4.1) with full Bluetooth/USB split and dongle build support (including Prospector dongles with displays), and uses the latest input listeners and processors for responsive pointer and scroll behavior.
 
 ## Overview & Usage
 
@@ -21,8 +21,8 @@ To see all the layers check out the [full render](keymap-drawer/all_layers/all_l
 **Keyboard Layers**
 | # | Layer      | Purpose                                                          |
 | - | ---------- | ---------------------------------------------------------------- |
-| 0 | **BASE**   | Standard typing with timeless home-row mods                      |
-| 1 | **NUM**    | Combined digits + F-keys (tap for numbers, shift for functions)  |
+| 0 | **BASE**   | Standard typing with number row + timeless home-row mods         |
+| 1 | **NUM**    | F-keys and arithmetic operators (hardware numbers live on BASE)  |
 | 2 | **NAV**    | Arrow keys, paging, TMUX navigation, mouse pointer               |
 | 3 | **SYM**    | Symbols, punctuation, and a couple of helpers                    |
 | 4 | **GAME**   | Gaming layer (just key-codes, no mods)                           |
@@ -40,14 +40,13 @@ To see all the layers check out the [full render](keymap-drawer/all_layers/all_l
 
 
 **Combos**
-| Trigger Keys              | Result                                  |
-| ------------------------- | --------------------------------------  |
-| `K17 + K18`                | **Caps Word** (one-shot words in CAPS) |
-| `K25 + K26`                | **Left Mouse Button**                  |
-| `K26 + K27`                | **Middle Mouse Button**                |
-| `K27 + K28`                | **Right Mouse Button**                 |
-| `K13 + K22`                | Toggle **MOUSE** layer                 |
-| `K38 + K39` (thumb cluster)| Layer-swap **BASE / EXTRAS**           |
+| Trigger Keys               | Result                                  |
+| -------------------------- | --------------------------------------- |
+| `K29 + K30`                | **Caps Word** (one-shot words in CAPS)  |
+| `K37 + K38`                | **Left Mouse Button**                   |
+| `K38 + K39`                | **Middle Mouse Button**                 |
+| `K39 + K40`                | **Right Mouse Button**                  |
+| `K52 + K53` (thumb cluster)| Layer-swap **BASE / EXTRAS**            |
 
 
 **Other Highlights**
@@ -57,14 +56,14 @@ To see all the layers check out the [full render](keymap-drawer/all_layers/all_l
   Options are also available for the smaller APDS9960 ambient light sensor variant, and a lower-cost Waveshare non-touch screen option (SKU 24382)
   - APDS9960 sensor builds use a custom Prospector module ALS-only driver that works with the various APDS9960 sensor types.
 - **Timeless-inspired home row mods:** Based on [urob's](https://github.com/urob/zmk-config#timeless-homerow-mods) work and configured on the BASE layer.
-- **Thumb-scroll mode:** Hold the left-most thumb button (K36) while moving the trackball to turn motion into scroll.
-- **Precision cursor mode:** Double-tap, then hold K36 to drop the pointer speed, release to return to normal speed.
-- **K37 - Multifunction**
+- **Thumb-scroll mode:** Hold the left-most thumb button (K50) while moving the trackball to turn motion into scroll.
+- **Precision cursor mode:** Double-tap, then hold K50 to drop the pointer speed, release to return to normal speed.
+- **K51 - Multifunction**
   - Tap: Left mouse click
   - Tap & Hold: Layer 3 (symbols) while the key is held
   - Double-Tap & Hold: holds the left mouse button
   - Tripple-Tap: Double mouse click
-- **K38 - Multifunction**
+- **K52 - Multifunction**
   - Tap: Backspace
   - Hold: Layer 1 (numbers) while the key is held
   - Quick tap, then hold: Repeats Backspace instead of dropping into Layer 1
@@ -74,7 +73,7 @@ To see all the layers check out the [full render](keymap-drawer/all_layers/all_l
   - Patched to prevent cursor jump on wake
 - **Hold-tap side-aware triggers:** Each HRM key only becomes a modifier if the opposite half is active, preventing accidental holds while one-handed.
 - **Timeless HRM with selective exceptions:** Base home-row mods use the timeless-style `balanced + hold-trigger-on-release` setup, while A, I, and O (on a Colemak-DH layout) keep tap-preferred variants to reduce accidental mod triggers during fast rolls.
-- **ZMK Studio:** Supported on Bluetooth and the standard no-screen dongle builds for quick keymap adjustments. Prospector screen builds disable it to preserve RAM.
+- **ZMK Studio:** Supported on all build types — Bluetooth, standard no-screen dongle, and Prospector screen dongle builds — for quick keymap adjustments.
 
 
 ## Flash the Firmware
@@ -100,10 +99,7 @@ Download your choice of firmware from the Releases page. Choose a combination of
 
 **ZMK Studio**
 
-[ZMK Studio](https://zmk.studio/) allows users to update functionality during runtime. It is supported on Bluetooth builds and the standard no-screen dongle build. For more details on how to use ZMK Studio, refer to the [ZMK documentation](https://zmk.dev/docs/features/studio).
-
-> [!NOTE]
-> Prospector screen builds disable ZMK Studio to preserve RAM and improve stability with the display stack.
+[ZMK Studio](https://zmk.studio/) allows users to update functionality during runtime. It is supported on all build types: Bluetooth, the standard no-screen dongle, and Prospector screen dongle builds. For more details on how to use ZMK Studio, refer to the [ZMK documentation](https://zmk.dev/docs/features/studio).
 
 
 **Edit Keymap Directly**
