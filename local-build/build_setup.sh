@@ -1,4 +1,5 @@
-#!/usr/bin/env bash
+﻿#!/usr/bin/env bash
+
 # build_zmk_locally.sh - Build ZMK firmware locally based on the matrix created from build.yaml
 
 set -euo pipefail
