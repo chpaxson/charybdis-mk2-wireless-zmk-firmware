@@ -1,0 +1,9 @@
+# Default: normalize line endings to LF on checkout
+* text=auto eol=lf
+
+# Shell scripts must always use LF, never a BOM
+*.sh text eol=lf working-tree-encoding=UTF-8
+
+# Windows batch files keep CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
