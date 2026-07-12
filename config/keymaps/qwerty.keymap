@@ -64,9 +64,9 @@
     &kp LSHFT  &ht_left_tp LCMD A  &ht_left LALT S  &ht_left LSHFT D  &ht_left LCTRL F  &kp G    &kp H  &ht_right RCTRL J  &ht_right RSHFT K  &ht_right_tp LALT L  &ht_right_tp RCMD SEMICOLON  &kp DEL
 // ├──────┼──────┼──────┼──────┼──────┼──────┤  ├──────┼──────┼──────┼──────┼──────┼──────┤
     &clip_hist  &kp Z  &kp X  &kp C  &kp V  &kp B    &kp N  &kp M  &mm_cm_sc  &mm_pr_col  &mm_qm_ex  &kp FSLH
-// ╰──────┴──────┴──────┼──────┼──────┼──────┼──────┼──────╮  ╭──────┼──────┼──────┴──────┴──────┴──────╯
+// ╰──────┴──────┴──────┼──────┼──────┼──────┤  ├──────┼──────┼──────┴──────┴──────┴──────╯
     &kp LGUI  &kp LALT  &td_esc_scrl_slow  &td_clk  &bs_num 1 BACKSPACE    &kp ENTER  &td_space_nav  &kp BSPC
-//                      ╰──────┴──────┴──────┴──────┴──────╯  ╰──────┴──────┴──────╯
+//        ╰──────┴──────┴──────┴──────┴──────╯  ╰──────┴──────┴──────╯
             >;
         };
 
