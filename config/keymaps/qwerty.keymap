@@ -56,13 +56,13 @@
 // ╭──────┬──────┬──────┬──────┬──────┬──────╮  ╭──────┬──────┬──────┬──────┬──────┬──────╮
     &kp ESC &kp N1   &kp N2   &kp N3   &kp N4   &kp N5   &kp N6      &kp N7   &kp N8   &kp N9   &kp N0   &kp MINUS
 // ├──────┼──────┼──────┼──────┼──────┼──────┤  ├──────┼──────┼──────┼──────┼──────┼──────┤
-    &kp C_AC_SEARCH  &kp Q  &kp W  &kp E  &kp R  &kp T    &kp Y  &kp U  &kp I  &kp O  &kp P  &td_layers
+    &kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T    &kp Y  &kp U  &kp I  &kp O  &kp P  &td_layers
 // ├──────┼──────┼──────┼──────┼──────┼──────┤  ├──────┼──────┼──────┼──────┼──────┼──────┤
-    &kp TAB  &ht_left_tp LCMD A  &ht_left LALT S  &ht_left LSHFT D  &ht_left LCTRL F  &kp G    &kp H  &ht_right RCTRL J  &ht_right RSHFT K  &ht_right_tp LALT L  &ht_right_tp RCMD SEMICOLON  &kp DEL
+    &kp LSHFT  &ht_left_tp LCMD A  &ht_left LALT S  &ht_left LSHFT D  &ht_left LCTRL F  &kp G    &kp H  &ht_right RCTRL J  &ht_right RSHFT K  &ht_right_tp LALT L  &ht_right_tp RCMD SEMICOLON  &kp SQT
 // ├──────┼──────┼──────┼──────┼──────┼──────┤  ├──────┼──────┼──────┼──────┼──────┼──────┤
-    &clip_hist  &kp Z  &kp X  &kp C  &kp V  &kp B    &kp N  &kp M  &mm_cm_sc  &mm_pr_col  &mm_qm_ex  &kp FSLH
+    &kp LCTRL  &kp Z  &kp X  &kp C  &kp V  &kp B    &kp N  &kp M  &mm_cm_sc  &mm_pr_col  &mm_qm_ex  &kp FSLH
 // ╰──────┴──────┴──────┼──────┼──────┼──────┼──────┼──────╮  ╭──────┼──────┼──────┴──────┴──────┴──────╯
-    &kp LGUI  &kp LALT  &td_esc_scrl_slow  &td_clk  &bs_num 1 BACKSPACE    &kp ENTER  &td_space_nav  &kp BSPC
+        &kp LGUI  &kp SPACE  &mo 1  &kp LALT  &BACKSPACE    &mo 2  &kp ENTER  &kp DEL
 //                      ╰──────┴──────┴──────┴──────┴──────╯  ╰──────┴──────┴──────╯
             >;
         };
@@ -81,10 +81,10 @@
         NAV {
             display-name = "Nav";
             bindings = <
-&trans   &trans          &trans         &trans        &trans          &trans            &trans           &trans             &trans       &trans          &trans            &trans
-&none    &msc MOVE_LEFT  &msc MOVE_UP   &none         &msc MOVE_DOWN  &msc MOVE_RIGHT   &detach_session  &create_or_attach  &next_pane   &show_sessions  &sync_panes       &none
-&kp TAB  &mkp MB4        &kp LALT       &kp LSHFT     &kp LCTRL       &mkp MB5          &h_split         &kp LEFT_ARROW     &kp DOWN     &kp UP          &kp RIGHT_ARROW   &none
-&none    &mmv MOVE_LEFT  &mmv MOVE_DOWN &mmv MOVE_UP  &mmv MOVE_RIGHT &none             &v_split         &kp HOME           &kp PG_DN    &kp PG_UP       &kp END           &none
+&trans   &trans          &trans         &trans        &trans          &trans            &trans   &trans          &trans       &trans          &trans           &trans
+&none    &msc MOVE_LEFT  &msc MOVE_UP   &none         &msc MOVE_DOWN  &msc MOVE_RIGHT   &none    &none           &none        &none           &none            &kp C_VOLUME_UP
+&kp TAB  &mkp MB4        &kp LALT       &kp LSHFT     &kp LCTRL       &mkp MB5          &none    &kp LEFT_ARROW  &kp DOWN     &kp UP          &kp RIGHT_ARROW  &kp K_MUTE
+&none    &mmv MOVE_LEFT  &mmv MOVE_DOWN &mmv MOVE_UP  &mmv MOVE_RIGHT &none             &none    &kp HOME        &kp PG_DN    &kp PG_UP       &kp END          &kp C_VOLUME_DOWN
 &trans   &trans          &none          &none          &none            &none             &trans           &trans
             >;
         };
@@ -92,10 +92,10 @@
         SYM {
             display-name = "Sym";
             bindings = <
-&trans  &trans      &trans    &trans     &trans           &trans         &trans     &trans       &trans    &trans    &trans     &trans
-&none   &kp TILDE   &kp DLLR  &kp CARET  &move_line_up    &mc_add_above  &kp AMPS   &kp PLUS     &kp LBKT  &kp RBKT  &kp PRCNT  &kp BSLH
-&none   &kp UNDER   &kp LT    &kp GT     &kp BACKSPACE    &delete_line   &kp GRAVE  &kp KP_MINUS &kp LPAR  &kp RPAR  &kp ASTRK  &kp PIPE
-&none   &home_dir   &none     &kp HASH   &move_line_down  &mc_add_below  &code_blk  &kp EQUAL    &kp LBRC  &kp RBRC  &kp AT     &kp FSLH
+&kp TILDE  &kp EXCL   &kp AT   &kp HASH  &kp DLLR         &kp PRCNT      &kp CARET  &kp AMPS      &kp ASTRK  &kp LPAR  &kp RPAR  &kp UNDER
+&none      &none      &none    &none     &move_line_up    &mc_add_above  &none      &kp PLUS      &kp LBKT   &kp RBKT  &none     &kp BSLH
+&none      &none      &kp LT   &kp GT    &kp BACKSPACE    &delete_line   &kp GRAVE  &kp KP_MINUS  &kp LPAR   &kp RPAR  &none     &kp PIPE
+&none      &home_dir  &none    &none     &move_line_down  &mc_add_below  &code_blk  &kp EQUAL     &kp LBRC   &kp RBRC  &none     &kp FSLH
 &trans  &trans      &none     &trans     &trans            &trans         &trans     &trans
             >;
         };
