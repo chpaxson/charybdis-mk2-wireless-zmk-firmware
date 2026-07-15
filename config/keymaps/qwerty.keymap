@@ -62,7 +62,7 @@
 // ├──────┼──────┼──────┼──────┼──────┼──────┤  ├──────┼──────┼──────┼──────┼──────┼──────┤
     &kp LCTRL  &kp Z  &kp X  &kp C  &kp V  &kp B    &kp N  &kp M  &mm_cm_sc  &mm_pr_col  &mm_qm_ex  &kp FSLH
 // ╰──────┴──────┴──────┼──────┼──────┼──────┼──────┼──────╮  ╭──────┼──────┼──────┴──────┴──────┴──────╯
-        &kp LGUI  &kp SPACE  &mo 1  &kp LALT  &BACKSPACE    &mo 2  &kp ENTER  &kp DEL
+        &kp LGUI  &kp SPACE  &mo 1  &kp LALT  &kp BACKSPACE    &mo 2  &kp ENTER  &kp DEL
 //                      ╰──────┴──────┴──────┴──────┴──────╯  ╰──────┴──────┴──────╯
             >;
         };
