@@ -127,5 +127,4 @@ include:
         extra_conf_files:
           - dongle_prospector/dongle_prospector_common.conf
           - dongle_prospector_layouts/dongle_prospector_layout_radii.conf
-          - dongle_prospector_themes/dongle_prospector_theme_blue.overlay
           - dongle_prospector/dongle_prospector_sensor.conf
