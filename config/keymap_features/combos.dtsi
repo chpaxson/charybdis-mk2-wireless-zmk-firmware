@@ -37,6 +37,12 @@
             bindings = <&td_bore>;
             key-positions = <52 53>;
         };
+
+        combo_SYM {
+            // Hold both thumb layer keys (Num + Nav) together to reach Sym.
+            bindings = <&mo 3>;
+            key-positions = <50 53>;
+        };
         
         combo_left_click {
             bindings = <&mkp LCLK>;
