@@ -6,6 +6,11 @@ on:
     tags:
       - 'v*'
   workflow_dispatch:
+    inputs:
+      enable_usb_logging:
+        description: 'Enable USB serial logging on every shield (for debugging connection issues)'
+        type: boolean
+        default: false
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -239,11 +244,16 @@ jobs:
         CONFIG_DIR="$GITHUB_WORKSPACE/config"
         BUILD_DIR=$(mktemp -d)
 
-        # Apply studio-rpc-usb-uart to USB central shields only.
-        # charybdis_right_bt is the central in BT split mode.
-        # charybdis_dongle is the central in dongle mode.
-        # Peripherals (left_bt, left_dongle, right_dongle) don't need it.
-        if [[ "$TARGET" == "charybdis_right_bt" || "$TARGET" == "charybdis_dongle" ]]; then
+        # When USB logging is requested, apply zmk-usb-logging to every shield instead
+        # (it and studio-rpc-usb-uart both add a CDC-ACM UART node and conflict).
+        USB_LOGGING="${{ github.event.inputs.enable_usb_logging }}"
+        if [[ "$USB_LOGGING" == "true" ]]; then
+          SNIPPET_OPTION="-DSNIPPET=zmk-usb-logging"
+        elif [[ "$TARGET" == "charybdis_right_bt" || "$TARGET" == "charybdis_dongle" ]]; then
+          # Apply studio-rpc-usb-uart to USB central shields only.
+          # charybdis_right_bt is the central in BT split mode.
+          # charybdis_dongle is the central in dongle mode.
+          # Peripherals (left_bt, left_dongle, right_dongle) don't need it.
           SNIPPET_OPTION="-DSNIPPET=studio-rpc-usb-uart"
         else
           SNIPPET_OPTION=""
