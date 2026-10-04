@@ -11,6 +11,12 @@ include:
     board: nice_nano//zmk
     shield: settings_reset
 
+  # XIAO BLE is used for the Prospector dongle board - it needs its own reset
+  # firmware since the settings/NVS flash partition layout differs from nice_nano.
+  - name: settings_reset_xiao
+    board: xiao_ble//zmk
+    shield: settings_reset
+
 # ── Bluetooth (BT) Firmwares ─────────────────────────────────────────────────────────────
   - name: bt
     board: nice_nano//zmk

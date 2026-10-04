@@ -403,5 +403,6 @@ jobs:
         files: |
           combo-artifacts/*.zip
           combo-artifacts/firmware-settings_reset/settings_reset.uf2
+          combo-artifacts/firmware-settings_reset_xiao/settings_reset.uf2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
