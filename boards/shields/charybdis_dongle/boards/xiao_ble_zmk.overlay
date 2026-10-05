@@ -1,0 +1,12 @@
+/* XIAO BLE's own board devicetree (xiao_ble_common.dtsi) unconditionally
+ * includes zephyr's boards/common/usb/cdc_acm_serial.dtsi, which adds a
+ * default USB CDC-ACM console node independent of any ZMK snippet. Combined
+ * with ZMK_USB (HID) plus the studio-rpc-usb-uart/zmk-usb-logging snippets'
+ * own CDC-ACM node, the dongle ends up presenting an unusual multi-CDC-ACM
+ * + HID composite USB descriptor that Windows fails to enumerate as HID.
+ * Disable the board's default console here so the dongle only ever exposes
+ * HID plus, at most, the single CDC-ACM channel a ZMK snippet explicitly adds.
+ */
+&board_cdc_acm_uart {
+    status = "disabled";
+};
