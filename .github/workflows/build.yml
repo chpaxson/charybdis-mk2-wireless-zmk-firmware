@@ -11,6 +11,10 @@ on:
         description: 'Enable USB serial logging on every shield (for debugging connection issues)'
         type: boolean
         default: false
+      disable_extra_usb_snippet:
+        description: 'Build central/dongle shields with HID-only USB (no CDC-ACM) to isolate USB enumeration issues'
+        type: boolean
+        default: false
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -247,7 +251,11 @@ jobs:
         # When USB logging is requested, apply zmk-usb-logging to every shield instead
         # (it and studio-rpc-usb-uart both add a CDC-ACM UART node and conflict).
         USB_LOGGING="${{ github.event.inputs.enable_usb_logging }}"
-        if [[ "$USB_LOGGING" == "true" ]]; then
+        DISABLE_EXTRA_USB="${{ github.event.inputs.disable_extra_usb_snippet }}"
+        if [[ "$DISABLE_EXTRA_USB" == "true" ]]; then
+          # Diagnostic build: HID-only USB, no CDC-ACM interface at all.
+          SNIPPET_OPTION=""
+        elif [[ "$USB_LOGGING" == "true" ]]; then
           SNIPPET_OPTION="-DSNIPPET=zmk-usb-logging"
         elif [[ "$TARGET" == "charybdis_right_bt" || "$TARGET" == "charybdis_dongle" ]]; then
           # Apply studio-rpc-usb-uart to USB central shields only.
